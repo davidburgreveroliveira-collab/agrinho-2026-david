@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agrinho 2026 - Tecnologia no Campo</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, sans-serif;
+}
+
+body{
+    background:#f4f4f4;
+    color:#333;
+}
+
+header{
+    background:linear-gradient(135deg,#2e7d32,#66bb6a);
+    color:white;
+    text-align:center;
+    padding:50px 20px;
+}
+
+header h1{
+    font-size:3rem;
+}
+
+header p{
+    margin-top:10px;
+    font-size:1.2rem;
+}
+
+nav{
+    background:#1b5e20;
+    padding:15px;
+    text-align:center;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 15px;
+    font-weight:bold;
+}
+
+section{
+    padding:50px 10%;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    margin:20px 0;
+    border-radius:15px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+.card h2{
+    color:#2e7d32;
+    margin-bottom:15px;
+}
+
+button{
+    background:#2e7d32;
+    color:white;
+    border:none;
+    padding:12px 25px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:1rem;
+}
+
+button:hover{
+    background:#1b5e20;
+}
+
+footer{
+    background:#1b5e20;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+#mensagem{
+    margin-top:15px;
+    font-weight:bold;
+    color:#2e7d32;
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>🌱 Agrinho 2026</h1>
+    <p>Tecnologia, Sustentabilidade e Inovação no Campo</p>
+</header>
+
+<nav>
+    <a href="#sobre">Sobre</a>
+    <a href="#tecnologia">Tecnologia</a>
+    <a href="#contato">Contato</a>
+</nav>
+
+<section id="sobre">
+    <div class="card">
+        <h2>Sobre o Projeto</h2>
+        <p>
+            Este site foi desenvolvido para o Agrinho 2026, destacando a
+            importância da programação e da tecnologia para melhorar a produção
+            agrícola, preservar o meio ambiente e conectar campo e cidade.
+        </p>
+    </div>
+</section>
+
+<section id="tecnologia">
+    <div class="card">
+        <h2>🚜 Tecnologia no Campo</h2>
+        <p>
+            Sensores inteligentes, drones, inteligência artificial e sistemas
+            de monitoramento ajudam agricultores a produzir mais com menos
+            desperdício.
+        </p>
+
+        <br>
+
+        <button onclick="mostrarMensagem()">
+            Saiba Mais
+        </button>
+
+        <p id="mensagem"></p>
+    </div>
+</section>
+
+<section id="contato">
+    <div class="card">
+        <h2>📧 Contato</h2>
+        <p>Email: agrinho2026@escola.com</p>
+        <p>Paraná - Brasil</p>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Projeto Agrinho - Programação Paraná</p>
+</footer>
+
+<script>
+function mostrarMensagem(){
+    document.getElementById("mensagem").innerHTML =
+    "A tecnologia é uma grande aliada para construir um futuro sustentável no campo!";
+}
+</script>
+
+</body>
+</html>
