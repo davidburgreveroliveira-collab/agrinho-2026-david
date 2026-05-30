@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agrinho 2026 - Programação Paraná</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+header {
+    background: #2e7d32;
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+}
+header h1 { margin-bottom: 10px; }
+nav {
+    background: #1b5e20;
+    padding: 15px;
+    text-align: center;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+section {
+    padding: 50px 10%;
+}
+.card {
+    background: white;
+    padding: 25px;
+    margin: 20px 0;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.card h2 { color: #2e7d32; margin-bottom: 15px; }
+button {
+    background: #2e7d32;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+button:hover { background: #1b5e20; }
+footer {
+    background: #1b5e20;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+#resultado, #respostaQuiz {
+    margin-top: 15px;
+    font-weight: bold;
+    color: #2e7d32;
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>🌱 Agrinho 2026</h1>
+    <p>Tecnologia, Sustentabilidade e Inovação no Campo</p>
+</header>
+
+<nav>
+    <a href="#sobre">Sobre</a>
+    <a href="#tecnologia">Tecnologia</a>
+    <a href="#contato">Contato</a>
+</nav>
+
+<section id="sobre">
+    <div class="card">
+        <h2>Sobre o Projeto</h2>
+        <p>
+            Este site foi desenvolvido para o Agrinho 2026, destacando a importância da programação
+            e da tecnologia para melhorar a produção agrícola e preservar o meio ambiente.
+        </p>
+    </div>
+</section>
+
+<section id="tecnologia">
+    <div class="card">
+        <h2>🚜 Calculadora de Impacto Ambiental</h2>
+        <p>Responda às perguntas abaixo e veja seu impacto ambiental:</p>
+        <label>Usa fertilizantes químicos? (1 = Sim, 0 = Não)</label><br>
+        <input type="number" id="fertilizante" min="0" max="1"><br><br>
+        <label>Usa irrigação eficiente? (1 = Sim, 0 = Não)</label><br>
+        <input type="number" id="irrigacao" min="0" max="1"><br><br>
+        <label>Faz rotação de culturas? (1 = Sim, 0 = Não)</label><br>
+        <input type="number" id="rotacao" min="0" max="1"><br><br>
+        <button onclick="calcularImpacto()">Calcular Impacto</button>
+        <p id="resultado"></p>
+    </div>
+
+    <div class="card">
+        <h2>🌾 Quiz Rápido</h2>
+        <p>Qual prática ajuda a conservar o solo?</p>
+        <button onclick="responder(true)">Rotação de culturas</button>
+        <button onclick="responder(false)">Queimar restos de plantações</button>
+        <p id="respostaQuiz"></p>
+    </div>
+</section>
+
+<section id="contato">
+    <div class="card">
+        <h2>📧 Contato</h2>
+        <p>Email: agrinho2026@escola.com</p>
+        <p>Paraná - Brasil</p>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Projeto Agrinho - Programação Paraná</p>
+</footer>
+
+<script>
+function calcularImpacto() {
+    const fertilizante = parseInt(document.getElementById('fertilizante').value);
+    const irrigacao = parseInt(document.getElementById('irrigacao').value);
+    const rotacao = parseInt(document.getElementById('rotacao').value);
+
+    let impacto = 0;
+    if (fertilizante === 1) impacto += 2;
+    if (irrigacao === 1) impacto += 2;
+    if (rotacao === 1) impacto += 3;
+
+    let mensagem = '';
+    if (impacto <= 2) mensagem = "Impacto ambiental negativo. Melhorar práticas!";
+    else if (impacto <= 5) mensagem = "Impacto moderado. Boa, mas dá para melhorar!";
+    else mensagem = "Impacto ambiental positivo! Excelente trabalho sustentável! 🌱";
+
+    document.getElementById('resultado').innerText = mensagem;
+}
+
+function responder(correto) {
+    const respostaQuiz = document.getElementById('respostaQuiz');
+    if (correto) {
+        respostaQuiz.innerText = "Correto! Rotação de culturas conserva o solo.";
+    } else {
+        respostaQuiz.innerText = "Errado. Tente novamente!";
+    }
+}
+</script>
+
+</body>
+</html>
